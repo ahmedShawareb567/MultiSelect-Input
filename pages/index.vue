@@ -5,6 +5,17 @@ div
       .col-md-6
         div(style="padding-top:4rem;")
           MultiSelect(v-model="section" :options="options" @searchChange="searchChange" label="🎃 Add Category:")
+
+        select.form-select.mt-4
+          option(value="null") choose
+          option(value="2")  2
+          option(value="3")  3
+
+        .py-3
+          AppDate
+
+        .py-3
+          ImagesUploader
 </template>
 <script>
 export default {
@@ -14,29 +25,33 @@ export default {
       options: [
         {
           value: 1,
-          text: "Food"
+          text: "Food",
         },
         {
           value: 2,
-          text: "Animal"
+          text: "Animal",
         },
         {
           value: 3,
-          text: "Weapons"
-        }
-      ]
+          text: "Weapons",
+        },
+      ],
     };
   },
   computed: {
     availableLocales() {
-      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale);
-    }
+      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale);
+    },
   },
   methods: {
     searchChange(value) {
       console.log(value);
-    }
-  }
+    },
+  },
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.form-select {
+  background-image: url("/arrow.svg") !important;
+}
+</style>

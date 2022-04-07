@@ -44,41 +44,41 @@ export default {
   props: {
     vid: {
       type: String,
-      default: null
+      default: null,
     },
     placeholder: {
       type: String,
-      default: "Search .."
+      default: "Search ..",
     },
     value: {
       type: null,
-      default: ""
+      default: "",
     },
     label: {
       type: String,
-      default: null
+      default: null,
     },
     type: {
       type: String,
-      default: "text"
+      default: "text",
     },
     options: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   data() {
     return {
       box: [],
       isToggle: false,
       isSelected: false,
-      search: ""
+      search: "",
     };
   },
   mounted() {
     this.box = this.value;
 
-    window.addEventListener("click", e => {
+    window.addEventListener("click", (e) => {
       const select = document.querySelector(".multiSelect");
       if (!select.contains(e.target)) {
         this.isToggle = false;
@@ -90,7 +90,7 @@ export default {
       this.isSelected = !this.isSelected;
     },
     deleteOption(id) {
-      const findElementIndex = this.box.findIndex(i => i.value == id);
+      const findElementIndex = this.box.findIndex((i) => i.value == id);
       this.box.splice(findElementIndex, 1);
     },
     toggleSelect() {
@@ -100,7 +100,7 @@ export default {
       setTimeout(() => {
         this.$emit("searchChange", this.search);
       }, 200);
-    }
+    },
   },
   watch: {
     value(val) {
@@ -108,8 +108,8 @@ export default {
     },
     box(newValue) {
       this.$emit("input", newValue);
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">
@@ -249,8 +249,8 @@ export default {
     margin-bottom: 0.3rem;
 
     &-checkBox {
-      width: 1rem;
-      height: 1rem;
+      width: 0.7rem;
+      height: 0.7rem;
       border-radius: 50%;
       border: 0.1rem solid rgba(0, 0, 0, 0.1);
     }
@@ -280,5 +280,21 @@ export default {
 .activeArrow {
   display: block;
   transform: rotate(-180deg);
+}
+[dir="rtl"] {
+  .multiSelect {
+    &-selectedItems {
+      &-arrows {
+        right: auto;
+        left: 0.7rem;
+      }
+    }
+    &-button {
+      &-arrows {
+        right: auto;
+        left: 0.5rem;
+      }
+    }
+  }
 }
 </style>
