@@ -1,7 +1,6 @@
 <template lang="pug">
 .filesUploader
   input(type="file" multiple)
-  p.mb-0.filesUploader-danger.mt-md(v-if="errors && errors.length") {{errors[0]}}
 </template>
 <script>
 import { compressAccurately } from "image-conversion";
@@ -31,6 +30,7 @@ export default {
   data() {
     return {
       images: [],
+      isToggle: false,
     };
   },
   props: {
@@ -48,7 +48,7 @@ export default {
     },
     label: {
       type: String,
-      required: true,
+      required: false,
     },
     edit: {
       type: Boolean,
@@ -109,6 +109,9 @@ export default {
   &-danger {
     font-size: 10px !important;
     color: red !important;
+  }
+  .filepond--credits {
+    display: none !important;
   }
 }
 </style>

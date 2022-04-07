@@ -2,6 +2,9 @@
 div
   .container.pt-xxl
     .row.justify-content-center
+      .col-12.pt-4
+        nuxt-link(to="/about") About
+        nuxt-link(to="/") Home
       .col-md-6
         div(style="padding-top:4rem;")
           MultiSelect(v-model="section" :options="options" @searchChange="searchChange" label="🎃 Add Category:")
@@ -16,6 +19,15 @@ div
 
         .py-3
           ImagesUploader
+
+        .d-flex.justify-content-center.align-items-center.py-3
+          Loading
+          Loading(type="wave")
+
+        RouteLoader
+
+  .py-3
+    RouteLoader
 </template>
 <script>
 export default {
