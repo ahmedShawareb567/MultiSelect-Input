@@ -26,7 +26,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ["@nuxtjs/svg-sprite", "@nuxtjs/style-resources"],
   styleResources: {
-    // scss: ["~/assets/scss/app.scss"]
+    scss: ["~/assets/css/app.scss"],
   },
   svgSprite: {
     input: "~/assets/icons/svg/",

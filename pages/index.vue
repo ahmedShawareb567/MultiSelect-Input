@@ -26,8 +26,13 @@ div
 
         RouteLoader
 
+        .custom-control.custom-checkbox.py-3
+          input.custom-control-input(type="checkbox")
+
   .py-3
     RouteLoader
+  .d-flex.justify-content-center.py-3
+    CheckInput
 </template>
 <script>
 export default {
@@ -48,6 +53,7 @@ export default {
           text: "Weapons",
         },
       ],
+      image: "",
     };
   },
   computed: {

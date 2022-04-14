@@ -9,7 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/style-resources": "^1.2.0",
+    "@nuxtjs/style-resources": "^1.2.1",
     "@nuxtjs/svg-sprite": "^0.5.2",
     "bootstrap": "^5.0.2",
     "bootstrap-vue": "^2.21.2",
@@ -26,6 +26,7 @@
     "luxon": "^2.3.1",
     "nuxt": "^2.15.7",
     "nuxt-i18n": "^6.27.3",
+    "vee-validate": "^3.4.14",
     "vuejs-datepicker": "^1.6.2",
     "weekstart": "^1.1.0"
   },
